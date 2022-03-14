@@ -1,7 +1,10 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all
+    if @current_user then 
+      @places = Place.all
+      else redirect_to "/session/new" 
+    end 
   end
 
   def show

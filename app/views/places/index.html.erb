@@ -13,6 +13,6 @@
   <a href="/places/new">New place</a>
 </p>
 
-<% else %>
+<% else %> <%# no need as I add if @current_user in place controller %>
      Dear Customer, You must first <a href="/sessions/new">login</a> to continue.
 <% end %>
