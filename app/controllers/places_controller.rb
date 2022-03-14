@@ -17,10 +17,13 @@ class PlacesController < ApplicationController
     @place.save
     redirect_to "/places"
   end
+
+  # For future Development 
   def edit
     @place = place.find(params["id"])
   end
-
+  
+  # For future Development 
   def update
     @place = place.find(params["id"])
     @place.update(params["place"])

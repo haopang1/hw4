@@ -2,17 +2,18 @@
 
 <h2><%= @current_user.username%>'s Posts</h2>
 
-<% for post in @place.posts %>
- <% if @current_user.id ==post.user_id %> 
-      <h3><%= post.title %></h3>
-      <h4><%= post.posted_on %></h4>
-      <p><%= post.description %></p>
+  <% for post in @place.posts %>
+    <% if @current_user.id ==post.user_id %> 
+        <h3><%= post.title %></h3>
+        <h4><%= post.posted_on %></h4>
+        <p><%= post.description %></p>
     <% end %>
-<% end %>
-<p>
-  <a href="/posts/new?place_id=<%= @place.id %>">New Post</a>
-</p>
+  <% end %>
+  
+  <p>
+      <a href="/posts/new?place_id=<%= @place.id %>">New Post</a>
+  </p>
 
-<p>
-  <a href="/places">Back to All Places</a>
-</p>
+  <p>
+      <a href="/places">Back to All Places</a>
+  </p>
