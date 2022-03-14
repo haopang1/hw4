@@ -6,11 +6,15 @@ class PostsController < ApplicationController
     #@post.user_id = session[:user_id] 
   end
 
-  def create
-    @post = Post.new(params["post"])
-    @post.user_id = session[:user_id]
-    @post.save
-    redirect_to "/places/#{@post.place.id}"
+  def create 
+      if @current_user # maybe not necesassry as I conctrol places page but good to have double confirmation
+        @post = Post.new(params["post"])
+        @post.user_id = session[:user_id]
+        @post.save
+      else  
+        flash[:notice] = "Login First"
+      end 
+        redirect_to "/places/#{@post.place.id}"
   end
 
 end
