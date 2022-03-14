@@ -6,6 +6,11 @@
     <% if @current_user.id ==post.user_id %> 
         <h3><%= post.title %></h3>
         <h4><%= post.posted_on %></h4>
+        <% if post.image.attached? %>
+            <img src="<%= url_for(post.image) %>" class="img-fluid">
+        <%# else ---- consider if I still need image column or only upload from local-----%>
+        <% end %>
+
         <p><%= post.description %></p>
     <% end %>
   <% end %>
