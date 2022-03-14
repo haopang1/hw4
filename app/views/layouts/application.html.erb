@@ -17,7 +17,7 @@
       <a href="/">Home</a>
       <%#= button_to "Logout", "/sessions/logout", method: :delete %>
        <% if @current_user %>
-        <%= @current_user.first_name %>
+        <%= @current_user.username %>
         <%= button_to "Logout", "/sessions/logout", method: :delete %>
       <% else %>
         <a href="/sessions/new">Login</a>
