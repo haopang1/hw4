@@ -1,6 +1,5 @@
-<h1>Thank you for Signup! </h1>
+<h1>Thank you for Signup! <%= @user.username %></h1>
 
-<dl>
-  <dt>UserName:</dt>
-  <dd><%= @user.username %></dd>
-</dl>
+<p>
+  <a href="/sessions/new">Back to Login </a>
+</p>

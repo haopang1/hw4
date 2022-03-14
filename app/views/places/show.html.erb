@@ -3,7 +3,7 @@
 <h2><%= @current_user.username%>'s Posts</h2>
 
 <% for post in @place.posts %>
-   <% if @current_user.id ==post.user_id %> 
+ <% if @current_user.id ==post.user_id %> 
       <h3><%= post.title %></h3>
       <h4><%= post.posted_on %></h4>
       <p><%= post.description %></p>
