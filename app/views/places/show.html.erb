@@ -1,26 +1,26 @@
 <div class="row">
     <h1><%= @place.name %></h1>
 </div>
-
 <div class="row">
   <% for post in @place.posts %>
     <% if @current_user.id ==post.user_id %> 
-        <div class="row">
-            
-            <h3><%= post.title %></h3>
-        </div>
-        <h4><%= post.posted_on %></h4>
+     <div class="col-sm-4"> 
+        <h3><%= post.title %></h3>
+        <h5><%= post.posted_on %></h5>
+     
         <% if post.image.attached? %>
             <img src="<%= url_for(post.image) %>" class="img-fluid">
         <% else %>
-            <Img src="/images/NO_Picture.jpg" class ="img-fluid">
+           <img src="/images/No_Picture.jpg" class="img-fluid">
         <% end %>
-
+        
         <p><%= post.description %></p>
+
+    </div> 
+
     <% end %>
   <% end %>
 </div>
-
 
 <div class="row">
   <h5>
