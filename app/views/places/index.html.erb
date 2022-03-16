@@ -4,15 +4,20 @@
   <h1>Places</h1>
 </div>
 
+<div class="row">
+  <h5>
+     <a class="btn btn-outline-primary" href="/places/new"" role="button">New Place</a>
+  </h5>
+</div>
+
+
   <% for place in @places %>
     <div class="row">
+      <h5>
       <a href="/places/<%= place.id %>"><%= place.name %></a>
+      </h5>
     </div>
   <% end %>
-
-<p>
-  <a href="/places/new">New place</a>
-</p>
 
 <% else %> <%# no need as I add if @current_user in place controller %>
 <div class="row">

@@ -1,24 +1,35 @@
-<h1><%= @place.name %></h1>
+<div class="row">
+    <h1><%= @place.name %></h1>
+</div>
 
-<h2><%= @current_user.username%>'s Posts</h2>
-
+<div class="row">
   <% for post in @place.posts %>
     <% if @current_user.id ==post.user_id %> 
-        <h3><%= post.title %></h3>
+        <div class="row">
+            
+            <h3><%= post.title %></h3>
+        </div>
         <h4><%= post.posted_on %></h4>
         <% if post.image.attached? %>
             <img src="<%= url_for(post.image) %>" class="img-fluid">
-        <%# else ---- consider if I still need image column or only upload from local-----%>
+        <% else %>
+            <Img src="/images/NO_Picture.jpg" class ="img-fluid">
         <% end %>
 
         <p><%= post.description %></p>
     <% end %>
   <% end %>
-  
-  <p>
-      <a href="/posts/new?place_id=<%= @place.id %>">New Post</a>
-  </p>
+</div>
 
-  <p>
-      <a href="/places">Back to All Places</a>
-  </p>
+
+<div class="row">
+  <h5>
+     <a class="btn btn-primary" href="/posts/new?place_id=<%= @place.id %>" role="button">New Post</a>
+  </h5>
+</div>
+
+<div class="row">
+  <h5>
+     <a class="btn btn-success" href="/places" role="button">Back to All Places</a>
+  </h5>
+</div>
