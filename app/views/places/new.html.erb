@@ -5,13 +5,13 @@
 <%= form_with model: @place do |form| %>
   <div class="row">
     <h5>
-    <%= form.label "name" %>
+    <%= form.label "Place name" %>
     <%= form.text_field "name" %>
     </h5>
-  <div class="row">
+  </div>
   <div class="row">
     <h4>
     <%= form.submit "Add A New Place", class: "btn btn-primary" %>
     </h4>
-  <div class="row">
+  </div>
 <% end %>
