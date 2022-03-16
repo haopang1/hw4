@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   def index
     if @current_user then 
       @places = Place.all
-      else redirect_to "/session/new" 
+      else redirect_to "/sessions/new" 
     end 
   end
 
