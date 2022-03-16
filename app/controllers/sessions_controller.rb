@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
         flash[:notice] = "Welcome, #{@user.username}."
         redirect_to "/places"
       else
-        flash[:notice] = "Nope"
+        flash[:notice] = "Nope, Wrong Password!"
         redirect_to "/sessions/new"
       end
     else
-      flash[:notice] = "Nope"
+      flash[:notice] = "Nope, email not signup!"
       redirect_to "/sessions/new"
     end
   end

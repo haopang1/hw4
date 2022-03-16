@@ -1,19 +1,29 @@
-<h1>New User Account</h1>
+<div class="row">
+  <h1>New User Account</h1>
+</div>
 
 <%= form_with model: @user do |form| %>
-  <p>
+  <div class="row">
+    <h5>
     <%= form.label "username" %>
     <%= form.text_field "username" %>
-  </p>
-  <p>
+  </h4>
+  </div>
+  <div class="row">
+    <h5>
     <%= form.label "email" %>
     <%= form.text_field "email" %>
-  </p>
-  <p>
+  </h4>
+  </div>
+  <div class="row">
+    <h5>
     <%= form.label "password" %>
     <%= form.text_field "password" %>
-  </p>
-  <p>
-    <%= form.submit "Sign up" %>
-  </p>
+  </h4>
+  </div>
+  <div class="row">
+    <h4>
+    <%= form.submit "Sign up" , class: "btn btn-primary" %>
+  </h4>
+  </div>
 <% end %>
